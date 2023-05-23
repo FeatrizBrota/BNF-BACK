@@ -6,6 +6,8 @@ const feiraSchema = new mongoose.Schema(
        nome: {type: String, required: true},
        bairro: {type: String, required: true},
        tipo: {type: Array, required:true},
+       endereco: {type: String, required: true},
+       referencia: {type: String, required: true},
        dia_da_semana : {type: String, required:true},
        horario_inicial: {type: Date, required:true},
        horario_final: {type: Date, required:true},
