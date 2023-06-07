@@ -8,8 +8,6 @@ export class LoginController {
 
     const dadosGoogleAuth = jwtDecode(token);
 
-    console.log(dadosGoogleAuth);
-
     const user = await usuarioService.execute(dadosGoogleAuth);
 
     return response.json(user);
