@@ -1,9 +1,7 @@
 import express from "express";
 import FeiraController from "../controllers/feirasController.js";
 
-
 const router = express.Router();
-
 
 router
     .get("/feiras",FeiraController.listarFeiras)
