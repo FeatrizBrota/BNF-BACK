@@ -1,8 +1,15 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-mongoose.connect("mongodb+srv://brotanaweb:123@BNF-DB.qu9m6ab.mongodb.net/BNF-DB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+dotenv.config();
+
+const { DB_USERNAME, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+
+const dbUri = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`;
+
+mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set('strictQuery', false);
 
-let db = mongoose.connection.useDb("BNF-DB");
+const db = mongoose.connection.useDb(DB_NAME);
 
 export default db;
