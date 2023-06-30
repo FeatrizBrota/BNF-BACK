@@ -1,1 +1,1 @@
-web: npm run dev
+web: npx nodemon server.js
