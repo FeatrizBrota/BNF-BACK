@@ -7,6 +7,7 @@ const MensagemSchema = new mongoose.Schema(
        tipo: {type: String, required:true},
        mensagem: {type: String, required: true},
        email: {type: String, required: false},
+       id_feira:{type: Object, required: false},
 
 }
 );
